@@ -24,7 +24,7 @@ def build_model(input_shape, num_classes):
     return model
 
 
-def save_features_batch(dataset, base_model, feature_filename, label_filename, batch_size=64):
+def save_features_batch(dataset, base_model, feature_filename, label_filename):
     with h5py.File(feature_filename, 'w') as feature_file, h5py.File(label_filename, 'w') as label_file:
         # Process first batch to get shapes
         for images, labels in dataset.take(1):
@@ -223,8 +223,7 @@ if __name__ == '__main__':
         train_ds,
         base_model,
         os.path.join(model_dir, 'train_features.h5'),
-        os.path.join(model_dir, 'train_labels.h5'),
-        BATCH_SIZE
+        os.path.join(model_dir, 'train_labels.h5')
     )
 
     logging.info("Processing validation data...")
@@ -232,8 +231,7 @@ if __name__ == '__main__':
         validation_ds,
         base_model,
         os.path.join(model_dir, 'val_features.h5'),
-        os.path.join(model_dir, 'val_labels.h5'),
-        BATCH_SIZE
+        os.path.join(model_dir, 'val_labels.h5')
     )
 
     logging.info("Processing test data...")
@@ -241,8 +239,7 @@ if __name__ == '__main__':
         test_ds,
         base_model,
         os.path.join(model_dir, 'test_features.h5'),
-        os.path.join(model_dir, 'test_labels.h5'),
-        BATCH_SIZE
+        os.path.join(model_dir, 'test_labels.h5')
     )
 
     # Load features for training
