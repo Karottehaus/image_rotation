@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_score
 import h5py
 import tensorflow as tf
+from settings import THRESHOLD
 
 CLASS_NAMES = ['0', '90', '180', '270']
 NUM_CLASSES = len(CLASS_NAMES)
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     predictions = model.predict(test_features)
     y_true = np.argmax(test_labels, axis=1)
 
-    modified_predictions, trigger_indices = apply_threshold(predictions, y_true, threshold=0.999999)
+    modified_predictions, trigger_indices = apply_threshold(predictions, y_true, threshold=THRESHOLD)
     overall_accuracy = accuracy_score(y_true, modified_predictions)
     print(f"Overall Accuracy: {overall_accuracy:.4f}")
 
