@@ -4,10 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_score
 import h5py
 import tensorflow as tf
-from settings import THRESHOLD
-
-CLASS_NAMES = ['0', '90', '180', '270']
-NUM_CLASSES = len(CLASS_NAMES)
+from settings import THRESHOLD, CLASS_NAMES, NUM_CLASSES
 
 
 def load_features(feature_file, label_file):
