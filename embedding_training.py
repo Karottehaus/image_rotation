@@ -7,13 +7,8 @@ from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Input
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+from settings import CLASS_NAMES, NUM_CLASSES, IMAGE_SIZE, BATCH_SIZE, SEED, VALIDATION_SPLIT
 
-CLASS_NAMES = ['0', '90', '180', '270']
-NUM_CLASSES = len(CLASS_NAMES)
-IMAGE_SIZE = (224, 224)
-BATCH_SIZE = 64
-SEED = 42
-VALIDATION_SPLIT = 0.2
 AUTOTUNE = tf.data.AUTOTUNE
 
 
