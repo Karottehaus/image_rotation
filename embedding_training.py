@@ -223,8 +223,7 @@ if __name__ == '__main__':
         train_ds,
         base_model,
         os.path.join(model_dir, 'train_features.h5'),
-        os.path.join(model_dir, 'train_labels.h5'),
-        BATCH_SIZE
+        os.path.join(model_dir, 'train_labels.h5')
     )
 
     logging.info("Processing validation data...")
@@ -232,8 +231,7 @@ if __name__ == '__main__':
         validation_ds,
         base_model,
         os.path.join(model_dir, 'val_features.h5'),
-        os.path.join(model_dir, 'val_labels.h5'),
-        BATCH_SIZE
+        os.path.join(model_dir, 'val_labels.h5')
     )
 
     logging.info("Processing test data...")
@@ -241,8 +239,7 @@ if __name__ == '__main__':
         test_ds,
         base_model,
         os.path.join(model_dir, 'test_features.h5'),
-        os.path.join(model_dir, 'test_labels.h5'),
-        BATCH_SIZE
+        os.path.join(model_dir, 'test_labels.h5')
     )
 
     # Load features for training
