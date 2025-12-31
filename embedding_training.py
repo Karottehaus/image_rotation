@@ -24,7 +24,7 @@ def build_model(input_shape, num_classes):
     return model
 
 
-def save_features_batch(dataset, base_model, feature_filename, label_filename, batch_size=64):
+def save_features_batch(dataset, base_model, feature_filename, label_filename):
     with h5py.File(feature_filename, 'w') as feature_file, h5py.File(label_filename, 'w') as label_file:
         # Process first batch to get shapes
         for images, labels in dataset.take(1):
